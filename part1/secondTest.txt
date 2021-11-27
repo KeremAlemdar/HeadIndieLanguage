@@ -1,0 +1,72 @@
+xox
+
+		<< comment
+	print("Give name to your hero");
+	string name = ask();
+
+	boolean door_one_to_two = false;
+	boolean door_one_to_tree = false;
+	boolean door_two_to_five = false;
+	boolean door_tree_to_four = false;
+	boolean door_four_to_five = false;
+	boolean isDead = false;
+	boolean gameFinished = false;
+
+	string menu = createMenu();
+
+	double wealth = 2.6 - 1 + (-5) * 2/4;
+
+	if(wealth <= 4 | wealth > 1 & wealth >= 2 | wealth < 5)
+
+		do {
+				while (isDead ?= false | ) {
+					print(menu);
+					open_map();
+					int menuSelection = ask();
+
+					if (menuSelection ?= 1) {
+						print_own_status();
+						print_wealth();
+						print_strength();
+						show_equipment_list();
+					}
+
+					else if (menuSelection ?= 2) {
+
+						if (chest_nearby()) { chest_open(); }
+
+						if (door_nearby()) { door_open(); }
+
+						if (merchant_nearby()) {
+							buy_food("bread");
+							eat_food();
+							buy_tool("gun");
+							equip();
+						}
+						if (enemy_nearby()) { fight(isDead); }
+						else {
+							print("nothing nearby");
+						}
+					}
+
+					else if (menuSelection ?= 3 & gameFinished ?= false) {
+						int direction = ask();
+						switch (direction) {
+						case 1: move_up();
+						case 2: move_down();
+						case 3: move_left();
+						case 4: move_right();
+						}
+
+					}
+
+				}
+		} while (gameFinished ?= false);
+	
+
+
+	string createMenu() {
+		string menu = " 1-) Show own status \n 2 - ) \t Take action \n 3 - ) Move around \n";
+		
+	}answer menu
+oxo

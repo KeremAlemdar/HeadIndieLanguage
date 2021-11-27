@@ -1,0 +1,204 @@
+// -------------------- test 1 -----------------------//
+
+xox{
+
+weapon excalibur;
+weapon pistol;
+weapon stone;
+
+excalibur.weapon.damage = 150;
+excalibur.weapon.weight = 50;
+excalibur.weapon.price = 650;
+excalibur.weapon.durability = 1650;
+excalibur.weapon.index = 1;
+
+pistol.weapon.damage = 250;
+pistol.weapon.weight = 30;
+pistol.weapon.price = 1650;
+pistol.weapon.durability = 650;
+pistol.weapon.index = 2;
+
+stone.weapon.damage = 50;
+stone.weapon.weight = 10;
+stone.weapon.price = 150;
+stone.weapon.durability = 1050;
+stone.weapon.index = 3;
+
+
+food bread;
+
+bread.food.energy = 50;
+bread.food.price = 10;
+bread.food.index = 4;
+
+chest c_room1;
+chest c_room2;
+chest c_room3;
+chest c_room4;
+chest c_room5;
+
+<<index 3 is stone
+c_room1.chest.weapon = 3;
+c_room2.chest.price = 35;
+c_room3.chest.food = 4;
+c_room4.chest.weapon = 2;
+
+
+<< Every player starts with 20 - 40 strength and 30 wealth
+
+
+int strength = random(20 ; 40);
+int wealth = 30;
+int noOfRoom = 5;
+double finalScore = 0;
+jump_height(100);
+gravity(7.74);
+
+int rooms[noOfRoom] = { 1, 2, 3, 4, 5 };
+int enemy[noOfRoom];
+enemy[0] = 2;
+enemy[1] = 4;
+int curr_room = rooms[0];
+
+do{
+
+print_jump_height();
+print_movement_speed();
+print_body_part_information();
+print_gravity();
+print_wealth();
+print_own_status();
+
+switch(curr_room){
+
+case 1: 
+	if(enemy_nearby()){
+		fight();
+		change_wealth(-5);
+	}
+	else if(chest_nearby()){
+		chest_open();
+		eat_food(4);
+	}
+	else if(merchant_nearby()){
+		buy_tool(1);
+		equip(1);
+		buy_food(4);
+	}
+	else{
+	}
+
+	print("where do you want to move? South or East ");
+	string path = ask();
+	
+	if(path ?= "south" ){ 
+	move_down();
+	}
+	else if(path ?= "east" ) { 
+	curr_room = room[2] ; 
+	}
+	else { print(" No way ") ; }
+	break;
+
+case 2:
+case 3:
+case 4:
+case 5:
+default:
+	for(int i = 0 ; i < 5 ; i = i / 3){
+		if(chest_nearby() AND door_nearby()){
+		}
+		while(curr_room >= 1 OR curr_room < 3.4 * -5){
+			int tempt = sqrt( pow(10 + 5));
+		}
+	}
+}
+}while(isAlive)
+
+
+free calculate_score( int strength, int wealth){
+finalScore = strength * 3 + 2 * wealth;
+}
+
+calculate_score(strength , wealth);
+
+if(finalScore > 50){
+char grade = 'S';
+print(grade);
+}
+
+print(finalScore);
+
+string game_ended(boolean isDeath){
+	string message = " Player is death";
+} answer message
+
+
+}oxo		
+	
+
+// ------------------------- test 2 ------------------------//
+
+
+xox {
+<< This program will be used for an adventure game
+
+print("Welcome to AdGame");
+
+string name;
+print("Please enter your name: ");
+name = ask();
+
+int level = 1;
+int strength = 0;
+int wealth = 0;
+boolean welcome = true;
+int roomNumber = 7;
+int numberOfFoods = random(30 ; 50);
+
+print("Please select the mode");
+
+print("1. Easy " + \n + " 2. Medium " + \n + "3. Hard ");
+
+for(int curr_room = -5 + 5 ; curr_room <= 10/2 ; curr_room += 1){
+	do{
+		if(curr_room <= 2){
+			wealth += 2;
+		}
+		else{}
+
+	}while(wealth < 10)
+}
+
+
+int mode;
+mode = ask();
+
+int roomNumber;
+
+if(mode ?= 1){
+    roomNumber = 4;
+}
+else if(mode ?= 2){
+    roomNumber = 6;
+}
+else if(mode ?= 3){
+    roomNumber = 8;
+}
+else{
+    while(mode != 1 AND mode != 2 AND mode != 3){
+        print("Please enter a valid number to continue!");
+        mode = ask();
+    }
+}
+
+if(welcome){
+    for(int i = 0; i < roomNumber; i = i + 1){
+        if(strength <= 0){
+            strength += 5;
+	    wealth *= 2;
+        }
+    }
+}
+}
+oxo

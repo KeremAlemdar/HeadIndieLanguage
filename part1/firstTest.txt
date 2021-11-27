@@ -1,0 +1,63 @@
+xox
+
+<< This program will be used for creation of an adventure game.
+
+print("Welcome to XXX");
+
+string name;
+int age;
+print("Please enter your nickname");
+name = ask();
+age = age();
+
+
+print("Please select the mode");
+
+print("1. Easy  2. Medium 3. Hard ");
+
+int mode;
+
+if(mode ?= 1){
+        print("Your task is to collect 500 coins ");
+        coinsMode();
+}
+else if(mode ?= 2){
+     print("Your task is to go out from the castle.");
+     castleMode();
+}
+else if(mode ?= 3){
+     print("Your task is to find the princess. ");
+     princesMode();
+}
+else{
+        while(mode != 1 & mode != 2 & mode != 3){
+                   print("Please enter a valid number to continue!");
+                                 mode = ask();
+                                 }
+}
+
+answer age(){
+       print("How old are you? ");
+       age = ask();
+}answer age
+
+
+free coinsMode(){
+     print_wealth();
+     print_health();
+<< Code block
+}
+free castleMode(){
+     print_wealth();
+     print_health();
+     show_equipment_list();
+<< Code block
+}
+free princessMode(){
+     print_wealth();
+     print_health();
+     print_equipment();
+<< Code block
+}
+
+oxo
